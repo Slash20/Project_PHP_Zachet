@@ -22,7 +22,6 @@ class ExchangeRate
     #[ORM\Column(type: 'date')]
     private \DateTimeInterface $date;
 
-    // Сеттеры
     public function setCurrency(string $currency): self
     {
         $this->currency = $currency;
@@ -41,7 +40,6 @@ class ExchangeRate
         return $this;
     }
 
-    // Геттеры
     public function getCurrency(): string
     {
         return $this->currency;
