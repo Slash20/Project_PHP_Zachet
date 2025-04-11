@@ -5,7 +5,8 @@
 /.env.*.local
 /config/secrets/prod/prod.decrypt.private.php
 /public/bundles/
-/var/
+/var/cache
+/var/log
 /vendor/
 ###< symfony/framework-bundle ###
 
@@ -23,3 +24,5 @@
 /public/assets/
 /assets/vendor/
 ###< symfony/asset-mapper ###
+
+/Postgres.session.sql
