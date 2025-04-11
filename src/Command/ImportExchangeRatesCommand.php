@@ -94,7 +94,12 @@ class ImportExchangeRatesCommand extends Command
             if (empty($exchangeRates)) {
                 $output->writeln('Ошибка: Массив с курсами валют пуст.');
             } else {
-                $jsonFile = 'exchange_rates_' . $date->format('Y-m-d') . '.json';
+
+                $directory = __DIR__ . '/../../var/exchange_rates/';
+                if (!file_exists($directory)) {
+                mkdir($directory, 0777, true);
+            }
+                $jsonFile = $directory . 'exchange_rates_' . $date->format('Y-m-d') . '.json';
                 file_put_contents($jsonFile, json_encode($exchangeRates, JSON_PRETTY_PRINT));
 
                 $output->writeln("Импортировано: $count курсов валют.");
