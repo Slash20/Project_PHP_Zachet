@@ -54,4 +54,9 @@ class ExchangeRate
     {
         return $this->date;
     }
+
+    public function getId() 
+    {
+        return $this->id;
+    }
 }
