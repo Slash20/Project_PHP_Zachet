@@ -8,6 +8,8 @@
 /var/cache
 /var/log
 /vendor/
+/templates/currency_converter/
+/templates/exchange_rate_api/
 ###< symfony/framework-bundle ###
 
 ###> phpunit/phpunit ###
