@@ -24,6 +24,12 @@ composer install
 docker-compose -f docker-compose.yaml up --build
 ```
 
+4. Перейти по адресу:
+
+```
+127.0.0.1/8000
+```
+
 # Поддерживаются такие операции как:
 
 Загрузка валюты:
