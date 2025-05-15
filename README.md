@@ -12,7 +12,13 @@
 git clone https://github.com/Slash20/Project_PHP_Zachet
 ```
 
-2. Запустить проект в папке, куда был перемещен проект:
+2. Установить необходимые зависимости:
+
+```
+composer install
+```
+
+3. Запустить проект в папке, куда был перемещен проект:
 
 ```
 docker-compose -f docker-compose.yaml up --build
