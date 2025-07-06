@@ -7,13 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultDiv = document.getElementById('result');
     const ratesTable = document.getElementById('rates-body');
   
-    // Загрузка списка валют
     async function loadCurrencies() {
         try {
             const response = await fetch('/api/currency');
             const rates = await response.json();
             
-            // Очистка и заполнение select
             fromSelect.innerHTML = '';
             toSelect.innerHTML = '';
             
@@ -22,11 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 toSelect.innerHTML += `<option value="${currency}">${currency}</option>`;
             }
             
-            // Установка значений по умолчанию
             fromSelect.value = 'EUR';
             toSelect.value = 'USD';
             
-            // Заполнение таблицы курсов
             updateRatesTable(rates);
         } catch (error) {
             console.error('Failed to load currencies:', error);
@@ -34,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
   
-    // Обновление таблицы курсов
     function updateRatesTable(rates) {
         ratesTable.innerHTML = '';
         for (const [currency, rate] of Object.entries(rates)) {
@@ -47,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
   
-    // Конвертация валют
     async function convertCurrency() {
         const amount = parseFloat(amountInput.value);
         const from = fromSelect.value;
@@ -80,16 +74,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    
-  
-    // Обмен валют местами
     function swapCurrencies() {
         const temp = fromSelect.value;
         fromSelect.value = toSelect.value;
         toSelect.value = temp;
     }
   
-    // Инициализация
     loadCurrencies();
     convertBtn.addEventListener('click', convertCurrency);
     swapBtn.addEventListener('click', swapCurrencies);
