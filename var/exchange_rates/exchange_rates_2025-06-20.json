@@ -1,0 +1,152 @@
+[
+    {
+        "currency": "USD",
+        "rate": 1.1515,
+        "date": "2025-06-20"
+    },
+    {
+        "currency": "JPY",
+        "rate": 167.67,
+        "date": "2025-06-20"
+    },
+    {
+        "currency": "BGN",
+        "rate": 1.9558,
+        "date": "2025-06-20"
+    },
+    {
+        "currency": "CZK",
+        "rate": 24.83,
+        "date": "2025-06-20"
+    },
+    {
+        "currency": "DKK",
+        "rate": 7.4597,
+        "date": "2025-06-20"
+    },
+    {
+        "currency": "GBP",
+        "rate": 0.8537,
+        "date": "2025-06-20"
+    },
+    {
+        "currency": "HUF",
+        "rate": 402.6,
+        "date": "2025-06-20"
+    },
+    {
+        "currency": "PLN",
+        "rate": 4.2656,
+        "date": "2025-06-20"
+    },
+    {
+        "currency": "RON",
+        "rate": 5.0303,
+        "date": "2025-06-20"
+    },
+    {
+        "currency": "SEK",
+        "rate": 11.125,
+        "date": "2025-06-20"
+    },
+    {
+        "currency": "CHF",
+        "rate": 0.9415,
+        "date": "2025-06-20"
+    },
+    {
+        "currency": "ISK",
+        "rate": 143,
+        "date": "2025-06-20"
+    },
+    {
+        "currency": "NOK",
+        "rate": 11.598,
+        "date": "2025-06-20"
+    },
+    {
+        "currency": "TRY",
+        "rate": 45.6904,
+        "date": "2025-06-20"
+    },
+    {
+        "currency": "AUD",
+        "rate": 1.7754,
+        "date": "2025-06-20"
+    },
+    {
+        "currency": "BRL",
+        "rate": 6.3145,
+        "date": "2025-06-20"
+    },
+    {
+        "currency": "CAD",
+        "rate": 1.5793,
+        "date": "2025-06-20"
+    },
+    {
+        "currency": "CNY",
+        "rate": 8.2643,
+        "date": "2025-06-20"
+    },
+    {
+        "currency": "HKD",
+        "rate": 9.0391,
+        "date": "2025-06-20"
+    },
+    {
+        "currency": "IDR",
+        "rate": 18889.21,
+        "date": "2025-06-20"
+    },
+    {
+        "currency": "ILS",
+        "rate": 4.0025,
+        "date": "2025-06-20"
+    },
+    {
+        "currency": "INR",
+        "rate": 99.7375,
+        "date": "2025-06-20"
+    },
+    {
+        "currency": "KRW",
+        "rate": 1573.8,
+        "date": "2025-06-20"
+    },
+    {
+        "currency": "MXN",
+        "rate": 21.924,
+        "date": "2025-06-20"
+    },
+    {
+        "currency": "MYR",
+        "rate": 4.8968,
+        "date": "2025-06-20"
+    },
+    {
+        "currency": "NZD",
+        "rate": 1.9229,
+        "date": "2025-06-20"
+    },
+    {
+        "currency": "PHP",
+        "rate": 65.831,
+        "date": "2025-06-20"
+    },
+    {
+        "currency": "SGD",
+        "rate": 1.4797,
+        "date": "2025-06-20"
+    },
+    {
+        "currency": "THB",
+        "rate": 37.758,
+        "date": "2025-06-20"
+    },
+    {
+        "currency": "ZAR",
+        "rate": 20.715,
+        "date": "2025-06-20"
+    }
+]

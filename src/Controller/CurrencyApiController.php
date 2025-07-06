@@ -1,11 +1,7 @@
 <?php
 
-// app/src/Controller/CurrencyApiController.php
-
 namespace App\Controller;
 
-use App\Entity\ExchangeRate;
-use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -29,7 +25,6 @@ class CurrencyApiController extends AbstractController
             return $this->json(['error' => 'Invalid JSON'], 400);
         }
 
-        // Мапим в формат: ['USD' => 1.1, 'GBP' => 0.88, ...]
         $currencies = [];
         foreach ($data as $entry) {
             $currencies[$entry['currency']] = $entry['rate'];
@@ -38,20 +33,18 @@ class CurrencyApiController extends AbstractController
         return $this->json($currencies);
     }
 
-
     #[Route('/convert', name: 'api_currency_convert', methods: ['GET'])]
     public function convert(Request $request): JsonResponse
     {
         $from   = $request->query->get('from');
         $to     = $request->query->get('to');
         $amount = $request->query->get('amount');
-        $date   = $request->query->get('date'); // может быть null
+        $date   = $request->query->get('date');
 
         if (!$from || !$to || !$amount) {
             return $this->json(['error' => 'Missing parameters. Required: from, to, amount'], 400);
         }
 
-        // Определяем путь к JSON
         $directory = __DIR__ . '/../../var/exchange_rates';
         if ($date) {
             $filename = "exchange_rates_{$date}.json";
@@ -69,7 +62,6 @@ class CurrencyApiController extends AbstractController
             return $this->json(['error' => 'Exchange rate file not found'], 404);
         }
 
-        // Читаем и мапим валюты в ключи массива
         $exchangeRates = json_decode(file_get_contents($path), true);
         if (!is_array($exchangeRates)) {
             return $this->json(['error' => 'Error decoding the exchange rate JSON'], 400);
@@ -79,7 +71,6 @@ class CurrencyApiController extends AbstractController
             $rates[$item['currency']] = $item['rate'];
         }
 
-        // Проверяем, что нужные валюты есть
         if ($from !== 'EUR' && !isset($rates[$from])) {
             return $this->json(['error' => "Currency rate not found for the \"from\" currency: {$from}"], 400);
         }
@@ -87,7 +78,6 @@ class CurrencyApiController extends AbstractController
             return $this->json(['error' => "Currency rate not found for the \"to\" currency: {$to}"], 400);
         }
 
-        // Конвертация
         $fromRate = ($from === 'EUR') ? 1.0 : $rates[$from];
         $toRate   = ($to   === 'EUR') ? 1.0 : $rates[$to];
         $result   = ($amount / $fromRate) * $toRate;
